@@ -1,1 +1,223 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>个人主页 | GitHub.io</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body
+    class="flex flex-col min-h-screen text-gray-800 bg-gray-50 dark:bg-dark dark:text-gray-200"
+  >
+    <div class="container flex-grow max-w-4xl px-4 py-8 mx-auto md:py-16">
+      <!-- 个人信息区域 -->
+      <header class="mb-12 text-center md:mb-20">
+        <div
+          class="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full shadow-lg border-1 md:w-40 md:h-40 border-primary/20"
+        >
+          <img
+            src="./src/assets/imgs/avatar.png"
+            alt="个人头像"
+            class="object-cover w-full h-full"
+          />
+        </div>
+        <h1 class="mb-2 text-3xl font-bold md:text-4xl text-shadow">
+          clydeqin7
+        </h1>
+        <p class="mb-4 text-xl text-gray-600 md:text-2xl dark:text-gray-400">
+          想 F.I.R.E 的程序猿
+        </p>
+        <p class="max-w-md mx-auto text-gray-500 dark:text-gray-400">
+          热爱生活，享受编程，专注于 AI 相关技术
+        </p>
+      </header>
+
+      <!-- 链接区域 -->
+      <section class="grid grid-cols-1 gap-4 mb-12 md:grid-cols-2">
+        <!-- 博客链接 -->
+        <a
+          href="https://blog.fe4fun.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center p-6 bg-white shadow-md dark:bg-gray-800 rounded-xl hover:shadow-lg transition-custom group"
+        >
+          <div
+            class="flex items-center justify-center w-12 h-12 mr-4 bg-blue-100 rounded-full dark:bg-blue-900 group-hover:bg-primary group-hover:text-white transition-custom"
+          >
+            <i class="text-xl fa-solid fa-blog text-primary"></i>
+          </div>
+          <div>
+            <h2 class="mb-1 text-xl font-semibold">技术博客</h2>
+            <p class="text-gray-600 dark:text-gray-400">
+              阅读我的技术文章和教程
+            </p>
+          </div>
+          <i
+            class="ml-auto text-gray-400 fa-solid fa-arrow-right group-hover:text-primary transition-custom"
+          ></i>
+        </a>
+
+        <!-- 项目链接 -->
+        <a
+          href="https://github.com/clydeqin7/bing-wallpaper"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center p-6 bg-white shadow-md dark:bg-gray-800 rounded-xl hover:shadow-lg transition-custom group"
+        >
+          <div
+            class="flex items-center justify-center w-12 h-12 mr-4 bg-gray-100 rounded-full dark:bg-gray-700 group-hover:bg-gray-800 group-hover:text-white transition-custom"
+          >
+            <i class="text-xl fa-brands fa-github"></i>
+          </div>
+          <div>
+            <h2 class="mb-1 text-xl font-semibold">Bing 壁纸</h2>
+            <p class="text-gray-600 dark:text-gray-400">
+              一个基于 Vue 3 的 Bing 壁纸应用
+            </p>
+          </div>
+          <i
+            class="ml-auto text-gray-400 fa-solid fa-arrow-right group-hover:text-primary transition-custom"
+          ></i>
+        </a>
+
+        <!-- 联系方式 -->
+        <a
+          id="email-link"
+          href="#"
+          class="flex items-center p-6 bg-white shadow-md dark:bg-gray-800 rounded-xl hover:shadow-lg transition-custom group"
+        >
+          <div
+            class="flex items-center justify-center w-12 h-12 mr-4 bg-purple-100 rounded-full dark:bg-purple-900 group-hover:bg-purple-600 group-hover:text-white transition-custom"
+          >
+            <i class="text-xl text-purple-600 fa-solid fa-envelope"></i>
+          </div>
+          <div>
+            <h2 class="mb-1 text-xl font-semibold">联系我</h2>
+            <p class="text-gray-600 dark:text-gray-400">发送邮件与我取得联系</p>
+          </div>
+          <i
+            class="ml-auto text-gray-400 fa-solid fa-arrow-right group-hover:text-primary transition-custom"
+          ></i>
+        </a>
+      </section>
+
+      <!-- 技能标签 -->
+      <section class="mb-12">
+        <h2 class="mb-6 text-2xl font-bold text-center">技术技能</h2>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span
+            class="px-4 py-2 text-sm text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-200"
+            >HTML5</span
+          >
+          <span
+            class="px-4 py-2 text-sm text-orange-800 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-200"
+            >CSS3</span
+          >
+          <span
+            class="px-4 py-2 text-sm text-yellow-800 bg-yellow-100 rounded-full dark:bg-yellow-900 dark:text-yellow-200"
+            >JavaScript</span
+          >
+          <span
+            class="px-4 py-2 text-sm text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-200"
+            >TypeScript</span
+          >
+          <span
+            class="px-4 py-2 text-sm text-indigo-800 bg-indigo-100 rounded-full dark:bg-indigo-900 dark:text-indigo-200"
+            >Vue</span
+          >
+          <span
+            class="px-4 py-2 text-sm text-purple-800 bg-purple-100 rounded-full dark:bg-purple-900 dark:text-purple-200"
+            >Node.js</span
+          >
+          <span
+            class="px-4 py-2 text-sm text-red-800 bg-red-100 rounded-full dark:bg-red-900 dark:text-red-200"
+            >Git</span
+          >
+          <span
+            class="px-4 py-2 text-sm text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-200"
+            >Tailwind CSS</span
+          >
+        </div>
+      </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer
+      class="py-6 bg-white border-t border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+    >
+      <div class="container px-4 mx-auto text-center">
+        <div class="flex justify-center mb-4 space-x-6">
+          <a
+            href="https://github.com/clydeqin7"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-custom"
+          >
+            <i class="text-xl fa-brands fa-github"></i>
+          </a>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          © <span id="current-year"></span> 个人主页. 基于 GitHub Pages 构建.
+        </p>
+      </div>
+    </footer>
+
+    <!-- 深色模式切换 -->
+    <button
+      id="theme-toggle"
+      class="fixed p-3 bg-white border border-gray-200 rounded-full shadow-lg bottom-6 right-6 dark:bg-gray-800 dark:border-gray-700"
+    >
+      <i class="text-gray-700 fa-solid fa-moon dark:hidden"></i>
+      <i class="hidden text-yellow-400 fa-solid fa-sun dark:inline"></i>
+    </button>
+
+    <script>
+      // 深色模式切换功能
+      const themeToggle = document.getElementById("theme-toggle");
+      const htmlElement = document.documentElement;
+
+      // 检查本地存储中的主题偏好
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        htmlElement.classList.add("dark");
+      } else {
+        htmlElement.classList.remove("dark");
+      }
+
+      // 切换主题
+      themeToggle.addEventListener("click", () => {
+        htmlElement.classList.toggle("dark");
+
+        // 保存主题偏好到本地存储
+        if (htmlElement.classList.contains("dark")) {
+          localStorage.theme = "dark";
+        } else {
+          localStorage.theme = "light";
+        }
+      });
+
+      // 设置当前年份
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+
+      // 动态生成邮箱链接，防止爬虫抓取
+      const emailLink = document.getElementById("email-link");
+      const user = "clydeqin7";
+      const domain = "foxmail.com";
+      emailLink.href = `mailto:${user}@${domain}`;
+
+      // 添加页面加载动画
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("opacity-100");
+        document.body.classList.remove("opacity-0");
+      });
+    </script>
+  </body>
+</html>

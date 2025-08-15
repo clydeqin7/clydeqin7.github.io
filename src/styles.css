@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .content-auto {
+    content-visibility: auto;
+  }
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .transition-custom {
+    transition: all 0.3s ease;
+  }
+}
+
+@layer components {
+  :root {
+    --primary: #3b82f6;
+    --secondary: #10b981;
+  }
+}
+
+@layer base {
+  body {
+    @apply opacity-0 transition-opacity duration-500;
+  }
+  
+  .dark {
+    --primary: #60a5fa;
+    --secondary: #34d399;
+  }
+  
+  .bg-primary\/20 {
+    background-color: rgb(59 130 246 / 0.2);
+  }
+  
+  .text-primary {
+    color: var(--primary);
+  }
+  
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  
+  .text-secondary {
+    color: var(--secondary);
+  }
+  
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+  
+  .bg-dark {
+    background-color: #1f2937;
+  }
+}
