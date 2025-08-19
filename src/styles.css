@@ -14,6 +14,55 @@
   .transition-custom {
     transition: all 0.3s ease;
   }
+  .icon-hover-scale {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .icon-hover-scale:hover {
+    transform: scale(1.15) rotate(5deg);
+  }
+  .icon-hover-glow {
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .icon-hover-glow:hover {
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+  .card-hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-hover-lift:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  .card-hover-lift:active {
+    transform: translateY(-2px) scale(0.98);
+  }
+  .skill-tag-hover {
+    transition: all 0.2s ease;
+  }
+  .skill-tag-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  .will-change-transform {
+    will-change: transform;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .gpu-accelerated {
+    transform: translateZ(0);
+  }
+  
+  /* 头像优化 */
+  .avatar-container img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  
 }
 
 @layer components {
@@ -55,7 +104,36 @@
   
   /* 平滑过渡效果 */
   * {
-    @apply transition-colors duration-300;
+    @apply transition-all duration-500 ease-in-out;
+  }
+  
+  /* 主题切换特殊过渡 */
+  html {
+    transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+  }
+  
+  body {
+    transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
+  }
+  
+  /* 卡片和按钮的平滑过渡 */
+  .card-hover-lift,
+  .skill-tag-hover,
+  button,
+  a {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* 主题切换图标特殊动画 */
+  #theme-toggle svg {
+    will-change: transform, opacity, filter;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+  
+  /* 图标切换时的光晕效果 */
+  #theme-toggle svg[style*="opacity: 1"] {
+    filter: drop-shadow(0 0 8px currentColor);
   }
   
   .bg-primary\/20 {
@@ -80,5 +158,24 @@
   
   .bg-dark {
     background-color: var(--bg-primary);
+  }
+  
+  /* 触摸体验优化 */
+  @media (hover: none) and (pointer: coarse) {
+    .card-hover-lift:hover {
+      transform: none;
+    }
+    
+    .card-hover-lift:active {
+      transform: scale(0.98);
+    }
+    
+    .skill-tag-hover:hover {
+      transform: none;
+    }
+    
+    .skill-tag-hover:active {
+      transform: scale(0.95);
+    }
   }
 }

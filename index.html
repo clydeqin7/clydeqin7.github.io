@@ -2,8 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <title>个人主页 | GitHub.io</title>
+    <meta name="description" content="clydeqin7 的个人主页 - 想 F.I.R.E 的程序猿，专注于 AI 相关技术" />
+    <meta name="keywords" content="个人主页,程序员,AI技术,Vue,Node.js,TypeScript" />
+    <meta name="author" content="clydeqin7" />
+    <meta property="og:title" content="clydeqin7 的个人主页" />
+    <meta property="og:description" content="想 F.I.R.E 的程序猿，专注于 AI 相关技术" />
+    <meta property="og:image" content="./src/assets/imgs/avatar.png" />
+    <meta property="og:url" content="https://clydeqin7.github.io" />
+    <link rel="canonical" href="https://clydeqin7.github.io" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -17,13 +30,23 @@
       <!-- 个人信息区域 -->
       <header class="mb-12 text-center md:mb-20">
         <div
-          class="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full shadow-lg border-1 md:w-40 md:h-40 border-primary/20"
+          class="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full shadow-lg border-1 md:w-40 md:h-40 border-primary/20 relative group cursor-pointer avatar-container"
         >
           <img
             src="./src/assets/imgs/avatar.png"
             alt="个人头像"
-            class="object-cover w-full h-full"
+            class="object-cover w-full h-full transition-all duration-300 group-hover:scale-110 z-10 relative"
+            onload="this.style.opacity='1'"
+            style="opacity: 0;"
+            loading="lazy"
+            decoding="async"
+            width="160"
+            height="160"
           />
+          <!-- 添加骨架屏 -->
+          <div class="absolute inset-0 bg-gray-200 animate-pulse rounded-full z-0"></div>
+          <!-- 添加 hover 遮罩 -->
+          <div class="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full z-20"></div>
         </div>
         <h1 class="mb-2 text-3xl font-bold md:text-4xl text-shadow">
           clydeqin7
@@ -43,22 +66,26 @@
           href="https://blog.fe4fun.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center p-6 bg-[var(--bg-primary)] shadow-md rounded-xl hover:shadow-lg transition-custom group border border-[var(--border-color)]"
+          class="flex items-center p-6 bg-[var(--bg-primary)] shadow-md rounded-xl card-hover-lift group border border-[var(--border-color)] overflow-hidden"
+          aria-label="访问我的技术博客，阅读技术文章和教程"
         >
           <div
-            class="flex items-center justify-center w-12 h-12 mr-4 bg-blue-100 rounded-full dark:bg-blue-900 group-hover:bg-primary group-hover:text-white transition-custom"
+            class="flex items-center justify-center w-12 h-12 mr-4 bg-blue-100 rounded-full dark:bg-blue-900 group-hover:bg-blue-600 dark:group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 transform group-hover:rotate-12"
           >
-            <i class="text-xl fa-solid fa-blog text-primary"></i>
+            <i class="text-xl fa-solid fa-blog text-blue-600 dark:text-blue-400 group-hover:text-white icon-hover-glow transition-colors duration-300"></i>
           </div>
-          <div>
+          <div class="flex-1">
             <h2 class="mb-1 text-xl font-semibold">技术博客</h2>
             <p class="text-gray-600 dark:text-gray-400">
               阅读我的技术文章和教程
             </p>
           </div>
-          <i
-            class="ml-auto text-gray-400 fa-solid fa-arrow-right group-hover:text-primary transition-custom"
-          ></i>
+          <div class="relative ml-4">
+            <i
+              class="text-gray-400 fa-solid fa-arrow-right group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-1 icon-hover-glow"
+            ></i>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-xl"></div>
+          </div>
         </a>
 
         <!-- 项目链接 -->
@@ -66,79 +93,85 @@
           href="https://github.com/clydeqin7/bing-wallpaper"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center p-6 bg-[var(--bg-primary)] shadow-md rounded-xl hover:shadow-lg transition-custom group border border-[var(--border-color)]"
+          class="flex items-center p-6 bg-[var(--bg-primary)] shadow-md rounded-xl card-hover-lift group border border-[var(--border-color)] overflow-hidden"
+          aria-label="查看我的 Bing 壁纸项目，基于 Vue 3 开发"
         >
           <div
-            class="flex items-center justify-center w-12 h-12 mr-4 bg-gray-100 rounded-full dark:bg-gray-700 group-hover:bg-gray-800 group-hover:text-white transition-custom"
+            class="flex items-center justify-center w-12 h-12 mr-4 bg-gray-100 rounded-full dark:bg-gray-700 group-hover:bg-gray-900 dark:group-hover:bg-gray-800 group-hover:text-white transition-all duration-300 transform group-hover:rotate-12"
           >
-            <i class="text-xl fa-brands fa-github"></i>
+            <i class="text-xl fa-brands fa-github text-gray-700 dark:text-gray-300 group-hover:text-white icon-hover-glow transition-colors duration-300"></i>
           </div>
-          <div>
+          <div class="flex-1">
             <h2 class="mb-1 text-xl font-semibold">Bing 壁纸</h2>
             <p class="text-gray-600 dark:text-gray-400">
               一个基于 Vue 3 的 Bing 壁纸应用
             </p>
           </div>
-          <i
-            class="ml-auto text-gray-400 fa-solid fa-arrow-right group-hover:text-primary transition-custom"
-          ></i>
+          <div class="relative ml-4">
+            <i
+              class="text-gray-400 fa-solid fa-arrow-right group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-1 icon-hover-glow"
+            ></i>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-xl"></div>
+          </div>
         </a>
 
         <!-- 联系方式 -->
         <a
           id="email-link"
           href="#"
-          class="flex items-center p-6 bg-[var(--bg-primary)] shadow-md rounded-xl hover:shadow-lg transition-custom group border border-[var(--border-color)]"
+          class="flex items-center p-6 bg-[var(--bg-primary)] shadow-md rounded-xl card-hover-lift group border border-[var(--border-color)] overflow-hidden"
+          aria-label="发送邮件联系我"
         >
           <div
-            class="flex items-center justify-center w-12 h-12 mr-4 bg-purple-100 rounded-full dark:bg-purple-900 group-hover:bg-purple-600 group-hover:text-white transition-custom"
+            class="flex items-center justify-center w-12 h-12 mr-4 bg-purple-100 rounded-full dark:bg-purple-900 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 transform group-hover:rotate-12"
           >
-            <i class="text-xl text-purple-600 fa-solid fa-envelope"></i>
+            <i class="text-xl text-purple-600 group-hover:text-white fa-solid fa-envelope icon-hover-glow transition-colors duration-300"></i>
           </div>
-          <div>
+          <div class="flex-1">
             <h2 class="mb-1 text-xl font-semibold">联系我</h2>
             <p class="text-gray-600 dark:text-gray-400">发送邮件与我取得联系</p>
           </div>
-          <i
-            class="ml-auto text-gray-400 fa-solid fa-arrow-right group-hover:text-primary transition-custom"
-          ></i>
+          <div class="relative ml-4">
+            <i
+              class="text-gray-400 fa-solid fa-arrow-right group-hover:text-purple-500 transition-all duration-300 transform group-hover:translate-x-1 icon-hover-glow"
+            ></i>
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-xl"></div>
+          </div>
         </a>
       </section>
 
       <!-- 技能标签 -->
       <section class="mb-12">
         <h2 class="mb-6 text-2xl font-bold text-center">技术技能</h2>
+        
+        <!-- 技能标签 -->
         <div class="flex flex-wrap justify-center gap-3">
           <span
-            class="px-4 py-2 text-sm text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-200"
+            class="px-4 py-2 text-sm text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-200 skill-tag-hover cursor-pointer"
             >HTML5</span
           >
           <span
-            class="px-4 py-2 text-sm text-orange-800 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-200"
+            class="px-4 py-2 text-sm text-orange-800 bg-orange-100 rounded-full dark:bg-orange-900 dark:text-orange-200 skill-tag-hover cursor-pointer"
             >CSS3</span
           >
           <span
-            class="px-4 py-2 text-sm text-yellow-800 bg-yellow-100 rounded-full dark:bg-yellow-900 dark:text-yellow-200"
+            class="px-4 py-2 text-sm text-yellow-800 bg-yellow-100 rounded-full dark:bg-yellow-900 dark:text-yellow-200 skill-tag-hover cursor-pointer"
             >JavaScript</span
           >
           <span
-            class="px-4 py-2 text-sm text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-200"
+            class="px-4 py-2 text-sm text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-200 skill-tag-hover cursor-pointer"
             >TypeScript</span
           >
           <span
-            class="px-4 py-2 text-sm text-indigo-800 bg-indigo-100 rounded-full dark:bg-indigo-900 dark:text-indigo-200"
+            class="px-4 py-2 text-sm text-indigo-800 bg-indigo-100 rounded-full dark:bg-indigo-900 dark:text-indigo-200 skill-tag-hover cursor-pointer"
             >Vue</span
           >
           <span
-            class="px-4 py-2 text-sm text-purple-800 bg-purple-100 rounded-full dark:bg-purple-900 dark:text-purple-200"
-            >Node.js</span
-          >
-          <span
-            class="px-4 py-2 text-sm text-red-800 bg-red-100 rounded-full dark:bg-red-900 dark:text-red-200"
+            class="px-4 py-2 text-sm text-red-800 bg-red-100 rounded-full dark:bg-red-900 dark:text-red-200 skill-tag-hover cursor-pointer"
             >Git</span
           >
           <span
-            class="px-4 py-2 text-sm text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-200"
+            class="px-4 py-2 text-sm text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-200 skill-tag-hover cursor-pointer"
             >Tailwind CSS</span
           >
         </div>
@@ -155,9 +188,11 @@
             href="https://github.com/clydeqin7"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-custom"
+            class="relative p-2 text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-all duration-300 group"
+            aria-label="访问我的 GitHub 主页"
           >
-            <i class="text-xl fa-brands fa-github"></i>
+            <i class="text-xl fa-brands fa-github icon-hover-scale"></i>
+            <span class="absolute inset-0 bg-primary/10 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></span>
           </a>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-400">
@@ -169,17 +204,20 @@
     <!-- 深色模式切换 -->
     <button
       id="theme-toggle"
-      class="fixed p-4 bg-[var(--bg-primary)] border border-[var(--border-color)] rounded-full shadow-lg bottom-6 right-6 hover:scale-110 hover:shadow-xl transition-all duration-300 group"
-      aria-label="切换主题"
+      class="fixed p-3 bg-[var(--bg-primary)] border border-[var(--border-color)] rounded-full shadow-lg bottom-6 right-6 hover:scale-105 hover:shadow-xl transition-all duration-400 ease-out group"
+      aria-label="切换深色/浅色主题"
+      aria-pressed="false"
+      role="switch"
     >
-      <div class="relative w-6 h-6">
+      <div class="relative w-5 h-5">
         <!-- 月亮图标 - 浅色主题时显示 -->
-        <svg id="moon-icon" class="w-6 h-6 text-indigo-600 filter drop-shadow-lg transition-all duration-500 transform rotate-0 scale-100 absolute inset-0" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        <svg id="moon-icon" class="w-5 h-5 text-gray-600 dark:text-gray-300 transition-all duration-700 ease-out absolute inset-0" fill="currentColor" viewBox="0 0 20 20" style="transform: scale(1) rotate(0deg) translateY(0px); filter: blur(0px);">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
         </svg>
         <!-- 太阳图标 - 深色主题时显示 -->
-        <svg id="sun-icon" class="w-6 h-6 text-orange-400 filter drop-shadow-lg transition-all duration-500 transform rotate-90 scale-0 absolute inset-0" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+        <svg id="sun-icon" class="w-5 h-5 text-yellow-500 dark:text-yellow-400 transition-all duration-700 ease-out absolute inset-0 opacity-0" fill="currentColor" viewBox="0 0 20 20" style="transform: scale(0.6) rotate(20deg) translateY(-10px); filter: blur(2px);">
+          <circle cx="10" cy="10" r="5" fill="currentColor"/>
+          <circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
         </svg>
       </div>
     </button>
@@ -194,6 +232,10 @@
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.classList.toggle('dark', savedTheme === 'dark');
         updateThemeIcons(savedTheme);
+        
+        // 初始化 aria-pressed 属性
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.setAttribute('aria-pressed', savedTheme === 'dark' ? 'true' : 'false');
       }
 
       // 切换主题
@@ -204,6 +246,10 @@
         document.documentElement.classList.toggle('dark', !isDark);
         localStorage.setItem('theme', newTheme);
         updateThemeIcons(newTheme);
+        
+        // 更新 aria-pressed 属性
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.setAttribute('aria-pressed', isDark ? 'false' : 'true');
       }
 
       function updateThemeIcons(theme) {
@@ -211,15 +257,23 @@
         const sunIcon = document.getElementById('sun-icon');
         
         if (theme === 'dark') {
-          moonIcon.classList.add('scale-0', 'opacity-0');
-          moonIcon.classList.remove('scale-100', 'opacity-100');
-          sunIcon.classList.add('scale-100', 'opacity-100');
-          sunIcon.classList.remove('scale-0', 'opacity-0');
+          // 平滑切换到深色模式 - 月亮消失，太阳出现
+          moonIcon.style.opacity = '0';
+          moonIcon.style.transform = 'scale(0.6) rotate(-20deg) translateY(10px)';
+          moonIcon.style.filter = 'blur(2px)';
+          
+          sunIcon.style.opacity = '1';
+          sunIcon.style.transform = 'scale(1) rotate(0deg) translateY(0px)';
+          sunIcon.style.filter = 'blur(0px)';
         } else {
-          moonIcon.classList.add('scale-100', 'opacity-100');
-          moonIcon.classList.remove('scale-0', 'opacity-0');
-          sunIcon.classList.add('scale-0', 'opacity-0');
-          sunIcon.classList.remove('scale-100', 'opacity-100');
+          // 平滑切换到浅色模式 - 太阳消失，月亮出现
+          moonIcon.style.opacity = '1';
+          moonIcon.style.transform = 'scale(1) rotate(0deg) translateY(0px)';
+          moonIcon.style.filter = 'blur(0px)';
+          
+          sunIcon.style.opacity = '0';
+          sunIcon.style.transform = 'scale(0.6) rotate(20deg) translateY(-10px)';
+          sunIcon.style.filter = 'blur(2px)';
         }
       }
 
